@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- MyBatis的执行环境的配置 -->
+	<!--default="development" 指定开发模式 -->
+	<environments default="development">
+		<!-- 指定运行环境的id -->
+		<environment id="development">
+			<!-- MyBatis的事务管理方式 -->
+			<transactionManager type="JDBC" />
+			<!-- 指定数据源为数据库连接池 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
+				<property name="username" value="mybatis" />
+				<property name="password" value="mybatis" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- sql映射文件的配置 -->
+	<mappers>
+		<mapper resource="res/config/mapper/UserMapper.xml" />
+	</mappers>
+	
+	
+</configuration>
